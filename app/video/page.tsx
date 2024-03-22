@@ -1,6 +1,4 @@
-"use client";
 import React from "react";
-import { useSearchParams } from "next/navigation";
 import { FaArrowUp, FaArrowDown } from "react-icons/fa";
 import {
   Sheet,
@@ -9,23 +7,13 @@ import {
   SheetContent,
   SheetFooter,
 } from "@/components/ui/sheet";
+import Player from "@/components/video/player";
 
-const VideoPage = () => {
-  const searchParams = useSearchParams();
-  const id = searchParams.get("id");
-  const mediaType = searchParams.get("type");
+const page = () => {
   return (
     <div>
       <div className="flex  h-[95vh] items-center justify-center bg-slate-700">
-        <iframe
-          src={
-            mediaType === "movie"
-              ? `https://vidsrc.to/embed/movie/${id}`
-              : `https://vidsrc.to/embed/tv/${id}`
-          }
-          className="h-[80vh] w-[80vw] "
-          allowFullScreen
-        />
+        <Player />
       </div>
       <div>
         <Sheet defaultOpen>
@@ -48,4 +36,4 @@ const VideoPage = () => {
   );
 };
 
-export default VideoPage;
+export default page;
