@@ -22,16 +22,14 @@ export default async function Home() {
   const TVTopRated = await fetchTVTopRated();
   const movieTopRated = await fetchMovieTopRated();
   const trendingResult = [
-    movieTrending.data.results[0],
-    TVTrending.data.results[0],
-    movieTrending.data.results[1],
-    TVTrending.data.results[1],
-    movieTrending.data.results[2],
-    TVTrending.data.results[2],
-    movieTrending.data.results[3],
-    TVTrending.data.results[3],
+    movieTrending.results[0],
+    TVTrending.results[0],
+    movieTrending.results[1],
+    TVTrending.results[1],
+    movieTrending.results[2],
+    TVTrending.results[2],
   ];
-  const genres = MovieGenre.data.genres.concat(TVGenre.data.genres);
+  const genres = MovieGenre.genres.concat(TVGenre.genres);
   return (
     <div>
       <div className="sticky top-0 ">
@@ -44,22 +42,22 @@ export default async function Home() {
       </div>
       <div className="relative bg-black  text-white ">
         <CarouselMT
-          apiData={movieTrendingWeek.data.results}
+          apiData={movieTrendingWeek.results}
           genres={genres}
           text="Movies Trending This Week"
         />
         <CarouselMT
-          apiData={TVTrendingWeek.data.results}
+          apiData={TVTrendingWeek.results}
           genres={genres}
           text="TV Trending This Week"
         />
         <CarouselMT
-          apiData={movieTopRated.data.results}
+          apiData={movieTopRated.results}
           genres={genres}
           text="Top Rated Movies"
         />
         <CarouselMT
-          apiData={TVTopRated.data.results}
+          apiData={TVTopRated.results}
           genres={genres}
           text="Top Rated TV"
         />

@@ -29,7 +29,6 @@ const Hero: React.FC<Props> = ({ trendingResult, genres }) => {
   const [index, setIndex] = useState(0);
   function handleMouseEnter(index: number) {
     setIndex(index);
-    console.log(trendingResult);
   }
   return (
     <div>
@@ -58,7 +57,7 @@ const Hero: React.FC<Props> = ({ trendingResult, genres }) => {
           ))}
         </div>
         <div className="flex flex-col-reverse ">
-          <div className="mb-14 flex   h-[60vh] w-[55vw] rounded-2xl bg-black/80">
+          <div className="mb-16 flex   h-[60vh] w-[55vw] rounded-2xl bg-black/80">
             <div
               className="mx-7 my-[5vh] h-[50vh] w-[15vw] rounded-2xl bg-cover bg-top "
               style={{
@@ -95,7 +94,7 @@ const Hero: React.FC<Props> = ({ trendingResult, genres }) => {
                 </div>
                 <div>Rating: {trendingResult[index].vote_average}</div>
               </div>
-              <div className="my-8">{trendingResult[index].overview}</div>
+              <div className="my-8 line-clamp-5">{trendingResult[index].overview}</div>
               <div>
                 Media Type:{" "}
                 <Badge className="rounded-none bg-slate-700 text-lg capitalize ">

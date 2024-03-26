@@ -9,6 +9,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Button } from "../ui/button";
 import React, { useState } from "react";
+import SearchBar from "./search-bar";
 
 const NavBar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -46,7 +47,8 @@ const NavBar = () => {
               </div>
             </Link>
           </NavigationMenuItem>
-          <NavigationMenuItem>
+          <NavigationMenuItem className="flex items-center justify-center gap-4">
+            <SearchBar />
             <SignedOut>
               <SignInButton>
                 <Button className="border-2">SignIn</Button>

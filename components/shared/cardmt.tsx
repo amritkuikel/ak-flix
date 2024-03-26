@@ -29,7 +29,7 @@ interface Props {
 }
 
 const MTCard: React.FC<Props> = ({ genres, data }) => {
-  const genreId = data.genre_ids[0];
+  const genreId = data.genre_ids ? data.genre_ids[0] : null;
   const genre = genres.find((genre) => genre.id === genreId);
   const mediaType = data.name ? "TV": "movie"
   return (
