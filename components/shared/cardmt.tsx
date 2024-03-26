@@ -35,12 +35,12 @@ const MTCard: React.FC<Props> = ({ genres, data }) => {
   return (
     <Card className="group w-20 cursor-pointer border-2 border-black bg-black md:w-48 ">
       <CardContent
-        className=" flex h-40 w-20 flex-col-reverse rounded-lg bg-cover bg-top p-0 group-hover:scale-y-125 md:h-72 md:w-48"
+        className=" flex h-40 w-20 flex-col-reverse rounded-lg bg-cover bg-top p-0 md:h-72 md:w-48 md:group-hover:scale-y-125"
         style={{
           backgroundImage: `url("https://image.tmdb.org/t/p/original${data.poster_path}")`,
         }}
       >
-        <div className="hidden rounded-xl bg-slate-600/90 p-2 group-hover:flex">
+        <div className="hidden rounded-xl bg-slate-600/90 p-2 md:group-hover:flex">
           <CardHeader className="p-0 ">
             <CardTitle className="  mb-0 line-clamp-1 text-lg  font-light text-white ">
               {data.title || data.name}
