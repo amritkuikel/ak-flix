@@ -13,8 +13,8 @@ interface apiData {
   poster_path: string;
   id: number;
   title: string;
-  name:string;
-  overview: string
+  name: string;
+  overview: string;
 }
 interface Genres {
   id: number;
@@ -24,24 +24,17 @@ interface Genres {
 interface Props {
   apiData: apiData[];
   genres: Genres[];
-  text:string;
+  text: string;
 }
 
-const CarouselMT: React.FC<Props> = ({
-  apiData,
-  genres,
-  text
-
-}) => {
+const CarouselMT: React.FC<Props> = ({ apiData, genres, text }) => {
   return (
-    <div className=" w-full px-24 pt-16">
+    <div className=" w-full px-14 pt-8">
       <div>
-        <div className="mb-8 text-2xl font-semibold">{text}</div>
+        <div className="mb-2 text-xl font-normal">{text}</div>
       </div>
       <div>
-        <Carousel
-          className="max-w-full"
-        >
+        <Carousel className="max-w-full">
           <CarouselContent>
             {apiData.map((data) => (
               <div key={data.id}>
@@ -53,8 +46,8 @@ const CarouselMT: React.FC<Props> = ({
               </div>
             ))}
           </CarouselContent>
-          <CarouselPrevious className="bg-slate-600"/>
-          <CarouselNext className="bg-slate-600"/>
+          <CarouselPrevious className="bg-slate-600" />
+          <CarouselNext className="bg-slate-600" />
         </Carousel>
       </div>
     </div>

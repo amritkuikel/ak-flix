@@ -32,7 +32,6 @@ const Hero: React.FC<Props> = ({ trendingResult, genres }) => {
   }
   return (
     <div>
-      
       <div
         className="flex h-[85vh] w-full cursor-pointer flex-row-reverse justify-between bg-cover bg-top px-24 pt-28 text-white "
         style={{
@@ -41,12 +40,16 @@ const Hero: React.FC<Props> = ({ trendingResult, genres }) => {
       >
         <div className="w-72">
           {trendingResult.map((result, index) => (
-            <Link key={result.id} href={`/video?id=${result.id}&type=${result.media_type}`} className="size-full">
+            <Link
+              key={result.id}
+              href={`/video?id=${result.id}&type=${result.media_type}`}
+              className="size-full"
+            >
               <div
                 onMouseEnter={() => handleMouseEnter(index)}
                 className="group m-2 rounded-xl bg-black/80 from-slate-400/50 to-slate-50/50 p-2 hover:scale-110  hover:bg-gradient-to-r"
               >
-                <div className="line-clamp-1 text-xl font-semibold">
+                <div className="line-clamp-1 text-base font-medium">
                   {result.title || result.name}
                 </div>
                 <div className="line-clamp-1 opacity-0 group-hover:opacity-100">
@@ -56,7 +59,7 @@ const Hero: React.FC<Props> = ({ trendingResult, genres }) => {
             </Link>
           ))}
         </div>
-        <div className="flex flex-col-reverse ">
+        <div className=" hidden flex-col-reverse md:flex"> 
           <div className="mb-16 flex   h-[60vh] w-[55vw] rounded-2xl bg-black/80">
             <div
               className="mx-7 my-[5vh] h-[50vh] w-[15vw] rounded-2xl bg-cover bg-top "
@@ -94,7 +97,9 @@ const Hero: React.FC<Props> = ({ trendingResult, genres }) => {
                 </div>
                 <div>Rating: {trendingResult[index].vote_average}</div>
               </div>
-              <div className="my-8 line-clamp-5">{trendingResult[index].overview}</div>
+              <div className="my-8 line-clamp-5">
+                {trendingResult[index].overview}
+              </div>
               <div>
                 Media Type:{" "}
                 <Badge className="rounded-none bg-slate-700 text-lg capitalize ">

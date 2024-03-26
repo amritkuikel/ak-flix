@@ -30,8 +30,10 @@ const NavBar = () => {
     <div className="fixed">
       <NavigationMenu>
         <NavigationMenuList
-          className="w-screen justify-between  px-24 py-5  text-white "
-          style={{ backgroundColor: `${isScrolled ? "rgba(0,0,0,0.5)" : ""}` }}
+          className="w-screen justify-between  px-4 py-2 text-white md:px-24 md:py-5 "
+          style={{
+            backgroundColor: `${isScrolled ? "rgba(0,0,0,0.5)" : ""}`,
+          }}
         >
           <NavigationMenuItem>
             <Link href="/">
@@ -43,12 +45,16 @@ const NavBar = () => {
                   height={50}
                   className="rounded-2xl"
                 />
-                <div className="text-4xl font-bold tracking-wider ">Flix</div>
+                <div className="text-xl font-bold tracking-wider md:text-4xl">
+                  Flix
+                </div>
               </div>
             </Link>
           </NavigationMenuItem>
           <NavigationMenuItem className="flex items-center justify-center gap-4">
-            <SearchBar />
+            <div className="hidden md:block">
+              <SearchBar />
+            </div>
             <SignedOut>
               <SignInButton>
                 <Button className="border-2">SignIn</Button>
@@ -63,6 +69,9 @@ const NavBar = () => {
           </NavigationMenuItem>
         </NavigationMenuList>
       </NavigationMenu>
+      <div className="md:hidden">
+        <SearchBar />
+      </div>
     </div>
   );
 };
