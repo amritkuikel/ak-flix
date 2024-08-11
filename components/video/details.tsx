@@ -29,21 +29,21 @@ const Details: React.FC<DetailsProps> = ({ id, type }) => {
   }, [id, type]);
 
   return (
-    <div className="p-4">
+    <div>
       {searchResults && (
-        <div>
-          <div>
+        <div className="flex flex-col items-center justify-center gap-4 p-4">
+          <div className="rounded bg-slate-500 p-2">
             {searchResults.original_title || searchResults.original_name}
           </div>
-          <div>
+          <div className="rounded bg-slate-500 p-2">
             {searchResults.release_date || searchResults.first_air_date}
           </div>
-          <div>{searchResults.overview}</div>
+          <div className="text-center">{searchResults.overview}</div>
           <div>
             {searchResults.production_companies.map((item: any) => (
               <div key={item.id}>
-                <div>
-                    {item.name}-{item.origin_country}
+                <div className="text-center">
+                  {item.name}-{item.origin_country}
                 </div>
               </div>
             ))}

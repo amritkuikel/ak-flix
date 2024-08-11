@@ -11,8 +11,8 @@ const Player = () => {
       <iframe
         src={
           mediaType === "movie"
-            ? `https://vidsrc.to/embed/movie/${id}`
-            : `https://vidsrc.to/embed/tv/${id}`
+            ? `https://vidsrc.me/embed/movie/${id}`
+            : `https://vidsrc.me/embed/tv/${id}`
         }
         className="h-[80vh] w-[80vw] "
         allowFullScreen
